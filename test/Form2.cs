@@ -34,7 +34,6 @@ namespace test
             Leer = comando3.ExecuteReader();
         }
         public Form2()
-        {
             InitializeComponent();
             textBox3.Text = DateTime.Today.Date.ToString("D");
         }
