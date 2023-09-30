@@ -39,7 +39,6 @@
             txtC = new Label();
             txbU = new TextBox();
             txbC = new TextBox();
-            btnDatos = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -141,23 +140,11 @@
             txbC.TabIndex = 9;
             txbC.UseSystemPasswordChar = true;
             // 
-            // btnDatos
-            // 
-            btnDatos.Location = new Point(12, 307);
-            btnDatos.Name = "btnDatos";
-            btnDatos.Size = new Size(94, 44);
-            btnDatos.TabIndex = 10;
-            btnDatos.Text = "Registro de Datos";
-            btnDatos.UseVisualStyleBackColor = true;
-            btnDatos.Visible = false;
-            btnDatos.Click += btnDatos_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(622, 363);
-            Controls.Add(btnDatos);
             Controls.Add(txbC);
             Controls.Add(txbU);
             Controls.Add(txtC);
@@ -171,6 +158,7 @@
             MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -189,6 +177,5 @@
         private Label txtC;
         private TextBox txbU;
         private TextBox txbC;
-        private Button btnDatos;
     }
 }

@@ -9,14 +9,14 @@ namespace test
         private SqlConnection Cnn;
         private SqlDataReader Leer;
 
-         public string x = ""; // almacena los permisos de los usuarios
+        
         public string xclave;
         public string usuario;
 
         //Creamos el metodo o funcion LeerBD, para acceder a la BD
         public void LeerBD()
         {
-            string CadenaConexion = @"Data Source=DESKTOP-N2S1HJB;Initial Catalog=Sorbeteria;Integrated Security=True";
+            string CadenaConexion = @"Data Source=DESKTOP-N2S1HJB;Initial Catalog=PruebaSorbeteria3;Integrated Security=True";
             Cnn = new SqlConnection(CadenaConexion);
             Cnn.Open();
 
@@ -38,7 +38,6 @@ namespace test
             {
                 usuario = Convert.ToString(Leer["usuario"]);
                 xclave = Convert.ToString(Leer["clave"]);
-                x = Convert.ToString(Leer["permiso"]);
             }
 
             if (usuario == txbU.Text && xclave == txbC.Text)
@@ -52,14 +51,7 @@ namespace test
                 btnInicio.Visible = false;
                 txtU.Text = "Bienvenido";
                 txtC.Text = "A sorbeteria Riki's";
-                switch (x)
-                {
-                    case "1":
-                        btnDatos.Visible = true;
-                        break;
-                    case "0":
-                        break;
-                }
+               
             }
             else
             {
@@ -95,7 +87,7 @@ namespace test
         {
             btnCerrar.Visible = false;
             btnfactura.Visible = false;
-            btnDatos.Visible = false;
+       
             txbC.Visible = true;
             txbU.Visible = true;
             btnInicio.Visible = true;
@@ -107,21 +99,12 @@ namespace test
 
         private void btnDatos_Click(object sender, EventArgs e)
         {
-            //1-Instanciar el formulario propietario
 
-            Form3 Datos = new Form3();
+        }
 
-            //2-Indicar cual es el propietario
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-            AddOwnedForm(Datos);
-
-            //3-Se accede al control deseado
-
-            //FHPP.textBox2.Text = this.textBox1.Text;
-
-            //4-Se muestra el formulario
-
-            Datos.ShowDialog();
         }
     }
 }
